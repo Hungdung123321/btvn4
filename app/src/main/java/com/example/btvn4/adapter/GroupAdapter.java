@@ -32,7 +32,7 @@ public class GroupAdapter extends RecyclerView.Adapter<GroupAdapter.GroupViewHol
 
     @Override
     public GroupViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view= LayoutInflater.from(parent.getContext()).inflate(R.layout.group_item,parent,false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.group_item, parent, false);
         return new GroupViewHolder(view);
     }
 
@@ -43,31 +43,33 @@ public class GroupAdapter extends RecyclerView.Adapter<GroupAdapter.GroupViewHol
 
     @Override
     public int getItemCount() {
-        if (groupList !=null){
+        if (groupList != null) {
             return groupList.size();
         }
         return 0;
     }
 
-    protected class GroupViewHolder extends RecyclerView.ViewHolder{
-        private TextView tvTitle,tvFan,tvPosts,tvGroupStatus;
+    protected class GroupViewHolder extends RecyclerView.ViewHolder {
+        private TextView tvTitle, tvFan, tvPosts, tvGroupStatus;
         private ImageView image;
+
         public GroupViewHolder(@NonNull View itemView) {
             super(itemView);
-            tvTitle=itemView.findViewById(R.id.tvTitle);
-            tvFan=itemView.findViewById(R.id.tvFan);
-            tvPosts=itemView.findViewById(R.id.tvPosts);
-            tvGroupStatus=itemView.findViewById(R.id.tvGroupStatus);
-            image=itemView.findViewById(R.id.image);
+            tvTitle = itemView.findViewById(R.id.tvTitle);
+            tvFan = itemView.findViewById(R.id.tvFan);
+            tvPosts = itemView.findViewById(R.id.tvPosts);
+            tvGroupStatus = itemView.findViewById(R.id.tvGroupStatus);
+            image = itemView.findViewById(R.id.image);
         }
-        public void setData(Group group){
+
+        public void setData(Group group) {
 
             image.setBackgroundResource(Integer.parseInt(group.getImage()));
             tvTitle.setText(group.getGroupTitle());
-            tvFan.setText(group.getFan()+"k");
+            tvFan.setText(group.getFan() + "k");
             tvPosts.setText(group.getPosts());
             tvGroupStatus.setText(group.getStatus());
-            switch (tvGroupStatus.getText().toString()){
+            switch (tvGroupStatus.getText().toString()) {
                 case "Nhóm đóng":
                     tvGroupStatus.setTextColor(Color.parseColor("#8E8E8E"));
                     break;

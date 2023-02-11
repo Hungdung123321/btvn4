@@ -5,7 +5,9 @@ import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 
 import com.example.btvn4.adapter.GroupAdapter;
 import com.example.btvn4.modle.Group;
@@ -39,5 +41,10 @@ public class MainActivity extends AppCompatActivity {
         groupList.add(new Group(R.drawable.rectangle6,"Thực đơn Eat-Clean giảm cân khỏe đẹp",11,"+20 bài viết mới nhất","Nhóm MỞ"));
         groupList.add(new Group(R.drawable.rectangle,"Easy Kento for busy People",8,"+10 bài viết mới nhất","Nhóm kín"));
         return groupList;
+    }
+
+    public void nextActivty(View view) {
+        Intent i=new Intent(this,folder.class);
+        startActivity(i);
     }
 }

@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">btvn4</string>
+    <string name="hello">hello</string>
+    <string name="todo">TODO</string>
 </resources>
